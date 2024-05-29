@@ -14,4 +14,14 @@ class Blog extends Model
         'body',
         // 'image',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function cats()
+    {
+        return $this->belongsToMany(Cat::class)->withTimestamps();
+    }
 }
